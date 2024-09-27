@@ -1543,3 +1543,10 @@ model AttributeToUser {
 
   @@unique([memberId, attributeOptionId])
 }
+model RateLimits {
+  id            Int      @id @default(autoincrement())
+  apiKeyId      String   @unique
+  ttl           Int
+  limit         Int
+  blockDuration Int
+}
